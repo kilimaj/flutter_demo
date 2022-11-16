@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
 
 void main() {
-  runApp(
-    Center(
-      child: Text("Welcome to flutter demo app", textDirection: TextDirection.ltr,),
-    )
-  );
+  runApp(Home());
 }
