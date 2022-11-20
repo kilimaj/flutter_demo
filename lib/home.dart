@@ -10,19 +10,27 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var messageText = TextEditingController();
+  String showMessage = "";
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          TextField(),
+          TextField(
+            controller: messageText,
+          ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                showMessage = messageText.text;
+              });
+            },
             child: Text("Show message"),
           ),
           Center(
             child: Text(
-              "Welcome to flutter demo app",
+              showMessage,
               textDirection: TextDirection.ltr,
             ),
           )
