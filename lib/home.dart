@@ -12,15 +12,21 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   var messageText = TextEditingController();
-  String showMessage = "";
+  String title = "";
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        TextField(
+          controller: messageText,
+        ),
         ElevatedButton(
           onPressed: () {
+            setState(() {
+              title = messageText.text;
+            });
             Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return About(title: "From Home Screen to About screen!");
+              return About(title: title);
             }));
           },
           child: const Text("Go to About Screen"),
