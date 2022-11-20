@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
-  const About({super.key});
+  const About({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About Screen"),
+        title: const Text("About Screen"),
       ),
-      body: const Center(
-        child: Text("Welcome to flutter Demo"),
+      body: Center(
+        child: Text(this.title),
       ),
     );
   }
